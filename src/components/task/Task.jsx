@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react"
 import { tasksState } from "./taskSlice"
 import { useSelector, useDispatch } from "react-redux"
-import { addTask, deleteTask, updateTask, deleteTask1, updateTask1 } from "./taskSlice"
-import { getTasks, addTask1 } from "./taskAPI"
+import { addTask, deleteTask, updateTask } from "./taskSlice"
+import { getTasks, addTask1, deleteTask1, updateTask1 } from "./taskAPI"
 
 const Task = () => {
     let dispatch = useDispatch()
@@ -83,7 +83,10 @@ const Task = () => {
                                             </div>
                                             <div class="modal-footer">
                                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                                <button onClick={()=>action1(task)} type="button" class="btn btn-primary">Save changes</button>
+                                                <button onClick={() => dispatch(updateTask1({
+                                                    taskId: task.taskId,
+                                                    task: task0
+                                                })) } type="button" class="btn btn-primary">Save changes</button>
                                             </div>
                                             </div>
                                         </div>

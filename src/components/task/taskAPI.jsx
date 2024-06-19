@@ -31,3 +31,39 @@ export const addTask1 = createAsyncThunk(
         }
     }
 )
+
+export const deleteTask1 = createAsyncThunk(
+    "task/deleteTask1",
+    async (data) => {
+        try {
+            let res = await fetch("http://localhost:5000/deletetask", {
+                method: "DELETE",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(data)
+            })
+            return await res.json()
+        } catch (error) {
+            console.error(error)
+        }
+    }
+)
+
+export const updateTask1 = createAsyncThunk(
+    "task/updateTask1",
+    async (data) => {
+        try {
+            let res = await fetch("http://localhost:5000/updatetask", {
+                method: "PATCH",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(data)
+            })
+            return await res.json()
+        } catch (error) {
+            console.error(error)
+        }
+    }
+)
