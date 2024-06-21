@@ -7,6 +7,9 @@ function App() {
   // let xyz = x => x = y => y = "value"
   // console.log(xyz()())
 
+// let xyz = (x) => x => x + 1
+// console.log(xyz()(1))
+
   return (
     <>
       {/* <Counter /> */}
